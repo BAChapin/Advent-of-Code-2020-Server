@@ -4,13 +4,13 @@ This code contains a Vapor server written in Vapor 4, Swift 5.3 to give answers 
 
 ## Upcoming Features
 
-### JSON Test Data
+### Custom JSON Test Data
 
-In the event that you want to generate test data in an easily code consumable fashion to test the API with, this will allow for the creation of test data.
+I will be adding the ability for you to specify how many items you want to test against for the challenge, and output the appropriate data and answers in JSON format.
 
-### RAW Test Data
+### Custom RAW Test Data
 
-In the event you want to check out more test data on the API, this will output a list equavilant to the size provided by Advent of Code.
+I will be adding the ability for you to specify how many items you want to test against for the challenge, and output the appropriate data and answers in RAW Text format.
 
 ## Support
 
