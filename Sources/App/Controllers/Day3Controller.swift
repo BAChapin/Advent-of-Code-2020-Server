@@ -15,12 +15,17 @@ final class Day3Controller: RouteCollection {
         
         input.get("part1", use: answerForPartOne)
         input.get("part2", use: answerForPartTwo)
+        input.get("json", use: json)
     }
     
     private func getCalculator(from string: String?) throws -> TrajectoryCalculator {
         guard let rawText = string else { throw Abort(.badRequest) }
         let list = rawText.components(separatedBy: .newlines)
         return TrajectoryCalculator(list)
+    }
+    
+    func json(_ req: Request) throws -> Day3Generator {
+        return Day3Generator()
     }
     
     func answerForPartOne(_ req: Request) throws -> Int {
