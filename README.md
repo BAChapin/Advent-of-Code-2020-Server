@@ -1,6 +1,6 @@
 # Advent of Code 2020 Server
 
-This code contains a Vapor server written in Vapor 4, Swift 5.3 to give answers to each of the code challenges in the 2020 Advent of Code<sup>1</sup>. Please check the [Wiki](https://github.com/BAChapin/Advent-of-Code-2020-Server/wiki) to see how to properly use this API, which will be hosted on Heroku (coming soon).
+This code contains a Vapor server written in Vapor 4, Swift 5.3 to give answers to each of the code challenges in the 2020 Advent of Code<sup>1</sup>. Please check the [Wiki](https://github.com/BAChapin/Advent-of-Code-2020-Server/wiki) to see how to properly use this API, which will be hosted on Heroku. Please check the [Usage Wiki Page](https://github.com/BAChapin/Advent-of-Code-2020-Server/wiki/Usage) for the details on the Heroku Dyno.
 
 ## Upcoming Features
 
