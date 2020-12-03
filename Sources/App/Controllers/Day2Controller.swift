@@ -15,6 +15,7 @@ final class Day2Controller: RouteCollection {
         
         input.on(.GET, "part1", body: .collect(maxSize: "1mb"), use: answerForPartOne)
         input.on(.GET, "part2", body: .collect(maxSize: "1mb"), use: answerForPartTwo)
+        input.get("json", use: json)
     }
     
     private func getData(from string: String?) throws -> [PasswordEntry] {
@@ -24,26 +25,20 @@ final class Day2Controller: RouteCollection {
         return list.compactMap { PasswordEntry($0) }
     }
     
+    func json(_ req: Request) throws -> Day2Generator {
+        return Day2Generator()
+    }
+    
     func answerForPartOne(_ req: Request) throws -> Int {
         let input = try getData(from: req.body.string)
-        var runningTotal = 0
         
-        input.forEach { entry in
-            runningTotal += entry.isValidForSledRental() ? 1 : 0
-        }
-        
-        return runningTotal
+        return input.correctPasswordsForSled()
     }
     
     func answerForPartTwo(_ req: Request) throws -> Int {
         let input = try getData(from: req.body.string)
-        var runningTotal = 0
         
-        input.forEach { entry in
-            runningTotal += entry.isValidForTobogganRental() ? 1 : 0
-        }
-        
-        return runningTotal
+        return input.correctPasswordsForToboggan()
     }
 
 }
