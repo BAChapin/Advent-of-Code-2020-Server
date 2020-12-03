@@ -14,6 +14,7 @@ final class DayController: RouteCollection {
         let day = routes.grouped("day")
         
         try day.register(collection: Day1Controller())
+        try day.register(collection: Day2Controller())
     }
     
 }
