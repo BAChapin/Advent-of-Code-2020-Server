@@ -8,7 +8,7 @@
 import Foundation
 import Vapor
 
-struct Day2Generator: Content {
+struct Day2Generator: Content, RawRepresentable {
     
     var answers: Answers
     var passwords: [String]
@@ -32,5 +32,9 @@ struct Day2Generator: Content {
         
         self.answers = Answers(tempPasswords)
         self.passwords = tempPasswords.compactMap { $0.description }
+    }
+    
+    func rawRepresentation() -> String {
+        return passwords.joined(separator: "\n")
     }
 }

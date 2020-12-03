@@ -8,7 +8,7 @@
 import Foundation
 import Vapor
 
-struct Day3Generator: Content {
+struct Day3Generator: Content, RawRepresentable {
     
     var answers: Answers
     var map: [String]
@@ -37,5 +37,9 @@ struct Day3Generator: Content {
         
         self.map = mapLayers
         self.answers = Answers(calculator: TrajectoryCalculator(mapLayers))
+    }
+    
+    func rawRepresentation() -> String {
+        return map.joined(separator: "\n")
     }
 }
