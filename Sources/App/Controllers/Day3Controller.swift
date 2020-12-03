@@ -19,7 +19,7 @@ final class Day3Controller: RouteCollection {
     
     private func getCalculator(from string: String?) throws -> TrajectoryCalculator {
         guard let rawText = string else { throw Abort(.badRequest) }
-        var list = rawText.components(separatedBy: .newlines)
+        let list = rawText.components(separatedBy: .newlines)
         return TrajectoryCalculator(list)
     }
     
@@ -32,7 +32,7 @@ final class Day3Controller: RouteCollection {
     func answerForPartTwo(_ req: Request) throws -> Int {
         let calculator = try getCalculator(from: req.body.string)
         
-        var trajectories: [Trajectory] = [(1,1),
+        let trajectories: [Trajectory] = [(1,1),
                                           (1,3),
                                           (1, 5),
                                           (1, 7),

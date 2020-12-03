@@ -38,3 +38,25 @@ extension Array where Element == Int {
         return false
     }
 }
+
+extension Array where Element == PasswordEntry {
+    func correctPasswordsForSled() -> Int {
+        var runningTotal = 0
+        
+        self.forEach { entry in
+            runningTotal += entry.isValidForSledRental() ? 1 : 0
+        }
+        
+        return runningTotal
+    }
+    
+    func correctPasswordsForToboggan() -> Int {
+        var runningTotal = 0
+        
+        self.forEach { entry in
+            runningTotal += entry.isValidForTobogganRental() ? 1 : 0
+        }
+        
+        return runningTotal
+    }
+}
