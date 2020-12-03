@@ -18,4 +18,23 @@ extension Array where Element == Int {
         
         return product
     }
+    
+    func checkForYearInTwo(against: Int, year: Int) -> Bool {
+        let check = year - against
+        return self.contains(check)
+    }
+    
+    func checkForYearInThree(against: Int, year: Int) -> Bool {
+        let check = year - against
+        
+        for num in self {
+            let finalCheck = check - num
+            
+            if self.contains(finalCheck) {
+                return true
+            }
+        }
+        
+        return false
+    }
 }

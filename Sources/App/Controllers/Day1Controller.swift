@@ -15,6 +15,11 @@ final class Day1Controller: RouteCollection {
         
         input.get("part1", use: answerForPartOne)
         input.get("part2", use: answerForPartTwo)
+        input.get("json", use: json)
+    }
+    
+    func json(_ req: Request) throws -> Day1Generator {
+        return Day1Generator()
     }
     
     func answerForPartOne(_ req: Request) throws -> Int {
