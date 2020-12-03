@@ -12,6 +12,12 @@ I will be adding the ability for you to specify how many items you want to test 
 
 I will be adding the ability for you to specify how many items you want to test against for the challenge, and output the appropriate data and answers in RAW Text format.
 
+## Get Involved
+
+I have created a private leaderboard on Advent of Code for up to 199 people to join, feel free to jump in and play along. Each day solving the 2 challenges earning stars. The private leaderboard's join code is `1048725-41c081f6` Once the 199 spots have been filled I will remove this portion of the readme, and at the end of the month post the top 5 people on the leaderboard.
+
+**Note:** _The leaderboard is retro-active, so if you've already done the days leading up to the day you join, your points will still count._
+
 ## Support
 
 Please try your hand at [Advent of Code](https://adventofcode.com/2020)
