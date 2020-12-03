@@ -7,14 +7,10 @@
 
 import Foundation
 
-struct PasswordEntry: CustomStringConvertible {
+struct PasswordEntry {
     let range: ClosedRange<Int>
     let neededLetter: Character
     let password: String
-    
-    var description: String {
-        return "\(range.lowerBound)-\(range.upperBound) \(neededLetter): \(password)"
-    }
     
     init(_ input: String) {
         let values = input.components(separatedBy: .whitespaces)
