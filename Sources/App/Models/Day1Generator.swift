@@ -10,7 +10,7 @@ import Vapor
 
 typealias Year = Int
 
-struct Day1Generator: Content {
+struct Day1Generator: Content, RawRepresentable {
     static let year: Year = 2020
     
     let part1: YearInTwo
@@ -82,5 +82,9 @@ struct Day1Generator: Content {
         }
         
         self.years = tempYears.shuffled()
+    }
+    
+    func rawRepresentation() -> String {
+        return years.compactMap { String($0) }.joined(separator: "\n")
     }
 }
