@@ -56,7 +56,7 @@ struct Day1Generator: Content, RawRepresentable {
         }
         
         static func generate() -> YearInThree {
-            let first = Year.random(in: 200...1500)
+            let first = Year.random(in: 200...1200)
             let second = Year.random(in: 200...(1500 - first))
             return YearInThree(first: first, second: second, third: 2020 - first - second)
         }
@@ -67,6 +67,8 @@ struct Day1Generator: Content, RawRepresentable {
         self.part2 = YearInThree.generate()
         var tempYears = part1.array
         tempYears.append(contentsOf: part2.array)
+        
+        print(years)
         
         for _ in 0..<(years - tempYears.count) {
             var isUsable: Bool = false

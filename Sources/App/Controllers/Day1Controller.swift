@@ -16,15 +16,31 @@ final class Day1Controller: RouteCollection {
         input.get("part1", use: answerForPartOne)
         input.get("part2", use: answerForPartTwo)
         input.get("json", use: json)
+        input.get("json", ":num", use: json)
         input.get("raw", use: raw)
+        input.get("raw", ":num", use: raw)
     }
     
     func json(_ req: Request) throws -> Day1Generator {
-        return Day1Generator()
+        guard let string = req.parameters.get("num") else { return Day1Generator() }
+        guard let num = Int(string) else { throw Abort(.badRequest) }
+        
+        if num < 6 {
+            throw Abort(.expectationFailed)
+        }
+        
+        return Day1Generator(numberOf: num)
     }
     
     func raw(_ req: Request) throws -> String {
-        return Day1Generator().rawRepresentation()
+        guard let string = req.parameters.get("num") else { return Day1Generator().rawRepresentation() }
+        guard let num = Int(string) else { throw Abort(.badRequest) }
+        
+        if num < 6 {
+            throw Abort(.expectationFailed)
+        }
+        
+        return Day1Generator(numberOf: num).rawRepresentation()
     }
     
     func answerForPartOne(_ req: Request) throws -> Int {

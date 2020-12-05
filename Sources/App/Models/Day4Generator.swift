@@ -21,7 +21,7 @@ struct Day4Generator: Content, RawRepresentable {
     init(numberOf passports: Int = 285) {
         var tempArray: [Passport] = []
         
-        for _ in 0..<285 {
+        for _ in 0..<passports {
             let randomEngine = Bool.random()
             
             tempArray.append(Passport.generatePassport(randomEngine))
@@ -29,7 +29,6 @@ struct Day4Generator: Content, RawRepresentable {
         }
         
         self.passports = tempArray.map { $0.rawRepresentation() }
-        print(self.passports.last!)
         self.answers = Answer(part1: tempArray.filter({ $0.isValid() }).count, part2: tempArray.filter({ $0.isDeepScanValid() }).count)
     }
     

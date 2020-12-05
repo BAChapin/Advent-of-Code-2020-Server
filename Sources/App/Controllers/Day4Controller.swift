@@ -16,7 +16,9 @@ final class Day4Controller: RouteCollection {
         input.on(.GET, "part1", body: .collect(maxSize: "1mb"), use: answerForPartOne)
         input.on(.GET, "part2", body: .collect(maxSize: "1mb"), use: answerForPartTwo)
         input.get("json", use: json)
+        input.get("json", ":num", use: json)
         input.get("raw", use: raw)
+        input.get("raw", ":num", use: raw)
     }
     
     private func getData(from string: String?) throws -> [Passport] {
@@ -27,11 +29,17 @@ final class Day4Controller: RouteCollection {
     }
     
     func json(_ req: Request) throws -> Day4Generator {
-        return Day4Generator()
+        guard let string = req.parameters.get("num") else { return Day4Generator() }
+        guard let num = Int(string) else { throw Abort(.badRequest) }
+        
+        return Day4Generator(numberOf: num)
     }
     
     func raw(_ req: Request) throws -> String {
-        return Day4Generator().rawRepresentation()
+        guard let string = req.parameters.get("num") else { return Day4Generator().rawRepresentation() }
+        guard let num = Int(string) else { throw Abort(.badRequest) }
+        
+        return Day4Generator(numberOf: num).rawRepresentation()
     }
     
     func answerForPartOne(_ req: Request) throws -> Int {

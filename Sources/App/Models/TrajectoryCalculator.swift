@@ -32,7 +32,7 @@ struct TrajectoryCalculator {
         return numberOfTrees
     }
     
-    func numberOfTrees(with trajectories: [Trajectory]) -> Int {
+    func numberOfTrees(with trajectories: [Trajectory]) -> Double {
         var numberOfTrees: [Int] = []
         
         for trajectory in trajectories {
