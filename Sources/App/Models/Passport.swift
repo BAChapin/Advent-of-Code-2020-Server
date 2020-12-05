@@ -404,8 +404,6 @@ struct Passport: RawRepresentable {
         let upper = (fields.count < 5) ? fields.count - 1 : 4
         let randomReturns = Int.random(in: 1...upper)
         var returnsAfter: [Int] = []
-        print("\(#function) start numOfReturns: \(randomReturns)")
-        print(fields.count)
         
         for num in 0...randomReturns {
             if num != 0 {
@@ -431,7 +429,6 @@ struct Passport: RawRepresentable {
             }
         }
         
-        print("\(#function) end")
         return constructedString
     }
     
