@@ -20,7 +20,7 @@ struct Day3Generator: Content, RawRepresentable {
                                               (1, 7),
                                               (2, 1)]
         var part1: Int
-        var part2: Int
+        var part2: Double
         
         init(calculator: TrajectoryCalculator) {
             self.part1 = calculator.numberOfTrees(with: (1, 3))

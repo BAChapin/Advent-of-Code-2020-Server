@@ -9,11 +9,11 @@ import Foundation
 
 // MARK: Array<Int>
 extension Array where Element == Int {
-    func product() -> Int {
-        var product = self[0]
+    func product() -> Double {
+        var product = Double(self[0])
         
         for i in 1..<self.count {
-            product *= self[i]
+            product *= Double(self[i])
         }
         
         return product
