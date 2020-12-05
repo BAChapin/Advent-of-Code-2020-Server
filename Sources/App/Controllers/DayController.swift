@@ -16,6 +16,7 @@ final class DayController: RouteCollection {
         try day.register(collection: Day1Controller())
         try day.register(collection: Day2Controller())
         try day.register(collection: Day3Controller())
+        try day.register(collection: Day4Controller())
     }
     
 }

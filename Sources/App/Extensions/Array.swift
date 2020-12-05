@@ -39,6 +39,7 @@ extension Array where Element == Int {
     }
 }
 
+// MARK: Array<PasswordEntry>
 extension Array where Element == PasswordEntry {
     func correctPasswordsForSled() -> Int {
         var runningTotal = 0
@@ -60,3 +61,16 @@ extension Array where Element == PasswordEntry {
         return runningTotal
     }
 }
+
+// MARK: Array<Passport.PassportField>
+extension Array where Element == Passport.PassportField {
+    var isUnique: Bool {
+        let temp = Set(self.map { $0.field })
+        return self.count == temp.count
+    }
+    
+    subscript(field: Passport.Field) -> Passport.PassportField? {
+        return self.first(where: { $0.field == field })
+    }
+}
+
