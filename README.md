@@ -4,13 +4,7 @@ This code contains a Vapor server written in Vapor 4, Swift 5.3 to give answers 
 
 ## Upcoming Features
 
-### Custom JSON Test Data
-
-I will be adding the ability for you to specify how many items you want to test against for the challenge, and output the appropriate data and answers in JSON format.
-
-### Custom RAW Test Data
-
-I will be adding the ability for you to specify how many items you want to test against for the challenge, and output the appropriate data and answers in RAW Text format.
+I'm looking for new features to add to this project. If you have any feature requests please submit them in the form of an issue.
 
 ## Get Involved
 
